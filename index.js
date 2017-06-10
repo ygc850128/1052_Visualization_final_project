@@ -1,4 +1,4 @@
-$(document).ready(function() {
+
     d3.json("county.json", function(topodata) {
         var features = topojson.feature(topodata, topodata.objects.county).features;
         var prj = function(v) {
@@ -25,4 +25,3 @@ $(document).ready(function() {
         }
         update();
     });
-});
