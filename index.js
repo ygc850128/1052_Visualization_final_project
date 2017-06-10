@@ -1,4 +1,4 @@
-
+document.write("<script type='text/javascript' src='http://d3js.org/d3.v3.min.js'></script>");
     d3.json("county.json", function(topodata) {
         var features = topojson.feature(topodata, topodata.objects.county).features;
         var prj = function(v) {
