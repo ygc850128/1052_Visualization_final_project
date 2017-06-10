@@ -1,4 +1,6 @@
 $(document).ready(function() {
+    var accident_data = $.getJSON("final.json");
+    console.log(accident_data);
     d3.json("county.json", function(topodata) {
         var features = topojson.feature(topodata, topodata.objects.county).features;
         var prj = function(v) {
@@ -15,7 +17,7 @@ $(document).ready(function() {
                 "stroke": 'green'
             }).on("mouseover", function(d) {
                 $(this).attr('fill', 'green');
-                console.log($(this).position());
+                // console.log($(this).position());
                 $("#info").show().css('top', $(this).position().top - 10).css('left', $(this).position().left + 10);
                 $("#name").text(d.properties.C_Name);
             }).on("mouseleave", function(d) {
